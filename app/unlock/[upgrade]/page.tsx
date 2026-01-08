@@ -57,7 +57,7 @@ const UPGRADE_INFO = {
 }
 
 // Generate static params for build time
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return [
     { upgrade: 'infinite' },
     { upgrade: 'automation' },
@@ -65,6 +65,9 @@ export function generateStaticParams() {
     { upgrade: 'dfy' },
   ]
 }
+
+// Enable dynamic params for any other upgrade types
+export const dynamicParams = true
 
 export default function UnlockUpgradePage() {
   const params = useParams()
