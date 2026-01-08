@@ -25,7 +25,7 @@ export default function Unlock10xPage() {
       const res = await fetch("/api/upgrades/unlock", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, upgradeType: "10x" }),
+        body: JSON.stringify({ email, upgradeType: "tenx" }),
       })
 
       const data = await res.json()

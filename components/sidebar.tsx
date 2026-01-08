@@ -95,7 +95,7 @@ const upgradeConfig = {
     icon: Zap,
     color: "from-cyan-500 to-blue-500",
   },
-  "10x": {
+  tenx: {
     name: "🚀 10X Mode",
     icon: Rocket,
     color: "from-green-500 to-emerald-500",

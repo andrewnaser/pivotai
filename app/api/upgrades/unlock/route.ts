@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createSupabaseServerClient } from "@/lib/supabase/server"
 
-const VALID_UPGRADES = ["infinite", "automation", "10x", "dfy"] as const
+const VALID_UPGRADES = ["infinite", "automation", "tenx", "dfy"] as const
 type UpgradeType = typeof VALID_UPGRADES[number]
 
 export async function POST(request: NextRequest) {
@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
 
     if (!upgradeType || !VALID_UPGRADES.includes(upgradeType as UpgradeType)) {
       return NextResponse.json(
-        { error: "Invalid upgrade type. Must be: infinite, automation, 10x, or dfy" },
+        { error: "Invalid upgrade type. Must be: infinite, automation, tenx, or dfy" },
         { status: 400 }
       )
     }
