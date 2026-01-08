@@ -138,7 +138,7 @@ export default function TenXUpgradePage() {
           </p>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-white/5 rounded-lg p-4 border border-white/10 text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">< 1s</div>
+              <div className="text-3xl font-bold text-green-400 mb-2">&lt; 1s</div>
               <div className="text-sm text-gray-400">Average Response Time</div>
             </div>
             <div className="bg-white/5 rounded-lg p-4 border border-white/10 text-center">
