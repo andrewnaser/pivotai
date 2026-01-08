@@ -56,6 +56,16 @@ const UPGRADE_INFO = {
   },
 }
 
+// Generate static params for build time
+export function generateStaticParams() {
+  return [
+    { upgrade: 'infinite' },
+    { upgrade: 'automation' },
+    { upgrade: '10x' },
+    { upgrade: 'dfy' },
+  ]
+}
+
 export default function UnlockUpgradePage() {
   const params = useParams()
   const router = useRouter()
