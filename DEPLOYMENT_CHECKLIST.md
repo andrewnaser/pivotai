@@ -49,7 +49,7 @@ Node Version: 18.x or higher
 #### ✅ Unlock Pages (IMPORTANT - Test These!)
 - [ ] `https://YOUR-DOMAIN.com/unlock/infinite`
 - [ ] `https://YOUR-DOMAIN.com/unlock/automation`
-- [ ] `https://YOUR-DOMAIN.com/unlock/10x`
+- [ ] `https://YOUR-DOMAIN.com/unlock/tenx` (displays as "10X")
 - [ ] `https://YOUR-DOMAIN.com/unlock/dfy`
 
 **Each should show:**
@@ -60,7 +60,7 @@ Node Version: 18.x or higher
 #### ✅ Upgrade Dashboard Pages (After Unlocking)
 - [ ] `https://YOUR-DOMAIN.com/upgrades/infinite`
 - [ ] `https://YOUR-DOMAIN.com/upgrades/automation`
-- [ ] `https://YOUR-DOMAIN.com/upgrades/10x`
+- [ ] `https://YOUR-DOMAIN.com/upgrades/tenx`
 - [ ] `https://YOUR-DOMAIN.com/upgrades/dfy`
 
 ---
@@ -108,6 +108,8 @@ Node Version: 18.x or higher
 5. **Should see**: Success message + redirect to dashboard
 6. **Check sidebar**: Should now show "💎 Infinite Mode"
 7. **Click it**: Should go to `/upgrades/infinite`
+
+**Note:** 10X upgrade uses URL `/unlock/tenx` (folder names can't start with numbers)
 
 ---
 
