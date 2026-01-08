@@ -46,7 +46,7 @@ https://YOUR-DOMAIN.com/unlock/automation
 ### 3️⃣ 10X UPGRADE
 **Unlock Link:**
 ```
-https://YOUR-DOMAIN.com/unlock/10x
+https://YOUR-DOMAIN.com/unlock/tenx
 ```
 
 **What They Get:**
@@ -124,7 +124,7 @@ Enter your signup email to activate.
 ### For 10X:
 ```
 Unlock your 10X upgrade here:
-https://YOUR-DOMAIN.com/unlock/10x
+https://YOUR-DOMAIN.com/unlock/tenx
 
 Enter your signup email to activate.
 ```
@@ -144,7 +144,7 @@ Enter your signup email to activate.
 Users will automatically see new items in their sidebar:
 - 💎 Infinite Mode → `/upgrades/infinite`
 - ⚡ Automation → `/upgrades/automation`
-- 🚀 10X Mode → `/upgrades/10x`
+- 🚀 10X Mode → `/upgrades/tenx`
 - 👑 DFY Library → `/upgrades/dfy`
 
 ---
@@ -165,7 +165,7 @@ Body: { "email": "user@example.com", "upgradeType": "infinite" }
 ### Valid Upgrade Types
 - `infinite`
 - `automation`
-- `10x`
+- `tenx` (displays as "10X")
 - `dfy`
 
 ---
