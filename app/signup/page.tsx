@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { AnimatedLogo } from "@/components/animated-logo"
 import { UserPlus, Mail, Lock, ArrowRight, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
-import { createBrowserClient } from "@/lib/supabase/browser"
+import { createSupabaseBrowserClient } from "@/lib/supabase/browser"
 
 export default function SignupPage() {
   const router = useRouter()
@@ -39,7 +39,7 @@ export default function SignupPage() {
     }
 
     try {
-      const supabase = createBrowserClient()
+      const supabase = createSupabaseBrowserClient()
 
       const { data, error: signUpError } = await supabase.auth.signUp({
         email,
