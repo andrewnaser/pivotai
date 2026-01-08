@@ -1,0 +1,350 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Mobile-friendly touch targets */
+  button, a, input, textarea, select {
+    @apply min-h-[44px] sm:min-h-0;
+  }
+}
+
+/* Scrollbar styling - Colorful */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2dd4bf 0%, #a855f7 50%, #ec4899 100%);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #10b981 0%, #f59e0b 100%);
+}
+
+/* Premium Multi-Color Animations */
+@keyframes cyber-glow {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(45, 212, 191, 0.4),
+      0 0 40px rgba(168, 85, 247, 0.3),
+      0 0 60px rgba(236, 72, 153, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 0 40px rgba(45, 212, 191, 0.6),
+      0 0 60px rgba(168, 85, 247, 0.5),
+      0 0 80px rgba(236, 72, 153, 0.4);
+  }
+}
+
+@keyframes profit-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+    border-color: rgb(16, 185, 129);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.8);
+    border-color: rgb(245, 158, 11);
+  }
+}
+
+@keyframes rainbow-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes money-rain {
+  0% { transform: translateY(-100%) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes neon-flicker {
+  0%, 100% { opacity: 1; text-shadow: 0 0 10px currentColor, 0 0 20px currentColor; }
+  50% { opacity: 0.8; text-shadow: 0 0 5px currentColor, 0 0 10px currentColor; }
+}
+
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float-multi {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(5deg); }
+  66% { transform: translateY(-5px) rotate(-5deg); }
+}
+
+/* Animation Classes */
+.animate-cyber-glow {
+  animation: cyber-glow 3s ease-in-out infinite;
+}
+
+.animate-profit-pulse {
+  animation: profit-pulse 2s ease-in-out infinite;
+}
+
+.animate-money-rain {
+  animation: money-rain 8s linear infinite;
+}
+
+.animate-neon-flicker {
+  animation: neon-flicker 3s ease-in-out infinite;
+}
+
+.animate-float-multi {
+  animation: float-multi 6s ease-in-out infinite;
+}
+
+/* Multi-Color Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #2dd4bf 0%, #a855f7 25%, #ec4899 50%, #f59e0b 75%, #10b981 100%);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbow-shift 6s ease infinite;
+}
+
+.gradient-text-profit {
+  background: linear-gradient(135deg, #10b981 0%, #f59e0b 50%, #10b981 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-rotate 3s ease infinite;
+}
+
+.gradient-text-cyber {
+  background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 33%, #ec4899 66%, #06b6d4 100%);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbow-shift 4s ease infinite;
+}
+
+/* Enhanced Glass Effects with Color */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px) saturate(180%);
+  @apply border border-white/10;
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.05),
+    0 0 20px rgba(45, 212, 191, 0.1);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px) saturate(200%);
+  @apply border;
+  border-image: linear-gradient(135deg, #2dd4bf, #a855f7, #ec4899, #f59e0b) 1;
+  box-shadow: 
+    0 12px 40px 0 rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+    0 0 30px rgba(45, 212, 191, 0.2),
+    0 0 40px rgba(168, 85, 247, 0.15);
+}
+
+.glass-profit {
+  background: rgba(16, 185, 129, 0.05);
+  backdrop-filter: blur(12px);
+  @apply border border-profit/30;
+  box-shadow: 
+    0 8px 32px rgba(16, 185, 129, 0.2),
+    inset 0 1px 0 rgba(16, 185, 129, 0.1);
+}
+
+/* Card Effects */
+.card-hover {
+  @apply transition-all duration-300;
+}
+
+.card-hover:hover {
+  @apply scale-[1.02];
+  box-shadow: 
+    0 20px 60px rgba(45, 212, 191, 0.2),
+    0 0 40px rgba(168, 85, 247, 0.15),
+    0 0 60px rgba(236, 72, 153, 0.1);
+  border-image: linear-gradient(135deg, #2dd4bf, #a855f7, #ec4899) 1;
+}
+
+.card-profit:hover {
+  box-shadow: 
+    0 20px 60px rgba(16, 185, 129, 0.3),
+    0 0 40px rgba(245, 158, 11, 0.2);
+}
+
+/* Button Effects */
+.btn-glow {
+  @apply relative overflow-hidden;
+  background: linear-gradient(135deg, #2dd4bf 0%, #a855f7 50%, #ec4899 100%);
+  background-size: 200% 200%;
+  animation: gradient-rotate 3s ease infinite;
+  box-shadow: 
+    0 0 20px rgba(45, 212, 191, 0.4),
+    0 0 40px rgba(168, 85, 247, 0.3);
+}
+
+.btn-glow::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent;
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.btn-glow:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-glow:hover {
+  box-shadow: 
+    0 0 30px rgba(45, 212, 191, 0.6),
+    0 0 50px rgba(168, 85, 247, 0.4),
+    0 0 70px rgba(236, 72, 153, 0.3);
+  animation-duration: 2s;
+}
+
+.btn-profit {
+  @apply relative overflow-hidden;
+  background: linear-gradient(135deg, #10b981 0%, #f59e0b 100%);
+  background-size: 200% 200%;
+  animation: gradient-rotate 3s ease infinite;
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+}
+
+.btn-profit:hover {
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.6), 0 0 60px rgba(245, 158, 11, 0.4);
+}
+
+/* Stat Card Animations */
+.stat-card {
+  @apply transition-all duration-500 relative overflow-hidden;
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+}
+
+.stat-card::before {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.1) 0%, rgba(168, 85, 247, 0.1) 50%, rgba(236, 72, 153, 0.1) 100%);
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+.stat-card:hover {
+  @apply -translate-y-2;
+  box-shadow: 
+    0 15px 50px rgba(45, 212, 191, 0.3),
+    0 0 50px rgba(168, 85, 247, 0.2);
+}
+
+/* Money/Profit Themed Elements */
+.money-text {
+  color: #10b981;
+  text-shadow: 
+    0 0 10px rgba(16, 185, 129, 0.5),
+    0 0 20px rgba(16, 185, 129, 0.3),
+    0 0 30px rgba(245, 158, 11, 0.2);
+  animation: neon-flicker 4s ease-in-out infinite;
+}
+
+.neon-text-multi {
+  text-shadow: 
+    0 0 10px rgba(45, 212, 191, 0.8),
+    0 0 20px rgba(168, 85, 247, 0.6),
+    0 0 30px rgba(236, 72, 153, 0.4),
+    0 0 40px rgba(245, 158, 11, 0.2);
+}
+
+/* Premium Backgrounds */
+.premium-bg-multi {
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(45, 212, 191, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.06) 0%, transparent 50%);
+}
+
+.premium-bg-profit {
+  background: 
+    radial-gradient(circle at 30% 40%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+}
+
+/* Border Effects */
+.border-gradient-multi {
+  border: 2px solid transparent;
+  background-image: 
+    linear-gradient(#0a0a0a, #0a0a0a),
+    linear-gradient(135deg, #2dd4bf, #a855f7, #ec4899, #f59e0b, #10b981);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.border-animate {
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.border-animate::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #2dd4bf, #a855f7, #ec4899, #f59e0b);
+  background-size: 300% 300%;
+  border-radius: inherit;
+  animation: gradient-rotate 4s ease infinite;
+  z-index: -1;
+}
+
+/* Loading Spinner - Multi-color */
+.spinner-multi {
+  @apply inline-block w-8 h-8 border-4 rounded-full;
+  border-color: #2dd4bf transparent #ec4899 transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Profit Indicator */
+.profit-indicator {
+  @apply relative;
+}
+
+.profit-indicator::after {
+  content: '💰';
+  @apply absolute -right-6 top-0;
+  animation: float-multi 3s ease-in-out infinite;
+}
+
+/* Success Message */
+.success-glow {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(245, 158, 11, 0.2));
+  box-shadow: 
+    0 0 30px rgba(16, 185, 129, 0.3),
+    0 0 50px rgba(245, 158, 11, 0.2);
+  animation: profit-pulse 2s ease-in-out infinite;
+}
