@@ -31,27 +31,42 @@ export default function InfiniteUpgradePage() {
 
       {/* Stats Grid */}
       <div className="grid gap-4 md:grid-cols-4">
-        {[
-          { label: "Daily Limit", value: "∞", icon: Infinity, color: "purple" },
-          { label: "Comment Generation", value: "UNLIMITED", icon: Sparkles, color: "pink" },
-          { label: "Saved Targets", value: "UNLIMITED", icon: TrendingUp, color: "purple" },
-          { label: "Priority Support", value: "ACTIVE", icon: Zap, color: "pink" },
-        ].map((stat, index) => (
-          <motion.div
-            key={stat.label}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 + index * 0.1 }}
-          >
-            <Card className={`glass-strong border-2 border-${stat.color}-500/30 bg-${stat.color}-500/5`}>
-              <CardContent className="p-6 text-center">
-                <stat.icon className={`h-8 w-8 text-${stat.color}-400 mx-auto mb-3`} />
-                <div className="text-3xl font-bold gradient-text-profit mb-1">{stat.value}</div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+          <Card className="glass-strong border-2 border-purple-500/30 bg-purple-500/5">
+            <CardContent className="p-6 text-center">
+              <Infinity className="h-8 w-8 text-purple-400 mx-auto mb-3" />
+              <div className="text-3xl font-bold gradient-text-profit mb-1">∞</div>
+              <div className="text-sm text-gray-400">Daily Limit</div>
+            </CardContent>
+          </Card>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+          <Card className="glass-strong border-2 border-pink-500/30 bg-pink-500/5">
+            <CardContent className="p-6 text-center">
+              <Sparkles className="h-8 w-8 text-pink-400 mx-auto mb-3" />
+              <div className="text-3xl font-bold gradient-text-profit mb-1">UNLIMITED</div>
+              <div className="text-sm text-gray-400">Comment Generation</div>
+            </CardContent>
+          </Card>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+          <Card className="glass-strong border-2 border-purple-500/30 bg-purple-500/5">
+            <CardContent className="p-6 text-center">
+              <TrendingUp className="h-8 w-8 text-purple-400 mx-auto mb-3" />
+              <div className="text-3xl font-bold gradient-text-profit mb-1">UNLIMITED</div>
+              <div className="text-sm text-gray-400">Saved Targets</div>
+            </CardContent>
+          </Card>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+          <Card className="glass-strong border-2 border-pink-500/30 bg-pink-500/5">
+            <CardContent className="p-6 text-center">
+              <Zap className="h-8 w-8 text-pink-400 mx-auto mb-3" />
+              <div className="text-3xl font-bold gradient-text-profit mb-1">ACTIVE</div>
+              <div className="text-sm text-gray-400">Priority Support</div>
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
 
       {/* Features */}

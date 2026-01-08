@@ -31,41 +31,33 @@ export default function AutomationUpgradePage() {
 
       {/* Automation Features */}
       <div className="grid gap-4 md:grid-cols-3">
-        {[
-          {
-            icon: Bot,
-            title: "Auto-Scheduling",
-            description: "Schedule comments to post at optimal times automatically",
-            color: "cyan",
-          },
-          {
-            icon: TrendingUp,
-            title: "Auto-Save Posts",
-            description: "Automatically save viral posts based on your criteria",
-            color: "blue",
-          },
-          {
-            icon: Clock,
-            title: "Smart Timing",
-            description: "AI determines the best times to comment for maximum reach",
-            color: "cyan",
-          },
-        ].map((feature, index) => (
-          <motion.div
-            key={feature.title}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 + index * 0.1 }}
-          >
-            <Card className={`glass-strong border-2 border-${feature.color}-500/30 bg-${feature.color}-500/5 h-full`}>
-              <CardContent className="p-6 text-center">
-                <feature.icon className={`h-12 w-12 text-${feature.color}-400 mx-auto mb-4`} />
-                <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-                <p className="text-sm text-gray-400">{feature.description}</p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+          <Card className="glass-strong border-2 border-cyan-500/30 bg-cyan-500/5 h-full">
+            <CardContent className="p-6 text-center">
+              <Bot className="h-12 w-12 text-cyan-400 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-white mb-2">Auto-Scheduling</h3>
+              <p className="text-sm text-gray-400">Schedule comments to post at optimal times automatically</p>
+            </CardContent>
+          </Card>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+          <Card className="glass-strong border-2 border-blue-500/30 bg-blue-500/5 h-full">
+            <CardContent className="p-6 text-center">
+              <TrendingUp className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-white mb-2">Auto-Save Posts</h3>
+              <p className="text-sm text-gray-400">Automatically save viral posts based on your criteria</p>
+            </CardContent>
+          </Card>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+          <Card className="glass-strong border-2 border-cyan-500/30 bg-cyan-500/5 h-full">
+            <CardContent className="p-6 text-center">
+              <Clock className="h-12 w-12 text-cyan-400 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-white mb-2">Smart Timing</h3>
+              <p className="text-sm text-gray-400">AI determines the best times to comment for maximum reach</p>
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
 
       {/* Auto-Schedule System */}

@@ -31,27 +31,42 @@ export default function TenXUpgradePage() {
 
       {/* Performance Stats */}
       <div className="grid gap-4 md:grid-cols-4">
-        {[
-          { label: "Processing Speed", value: "10X", icon: Zap, color: "green" },
-          { label: "AI Model", value: "GPT-4", icon: Sparkles, color: "emerald" },
-          { label: "Priority Access", value: "YES", icon: Target, color: "green" },
-          { label: "Analytics", value: "ADVANCED", icon: BarChart3, color: "emerald" },
-        ].map((stat, index) => (
-          <motion.div
-            key={stat.label}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 + index * 0.1 }}
-          >
-            <Card className={`glass-strong border-2 border-${stat.color}-500/30 bg-${stat.color}-500/5`}>
-              <CardContent className="p-6 text-center">
-                <stat.icon className={`h-8 w-8 text-${stat.color}-400 mx-auto mb-3`} />
-                <div className="text-3xl font-bold gradient-text-profit mb-1">{stat.value}</div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+          <Card className="glass-strong border-2 border-green-500/30 bg-green-500/5">
+            <CardContent className="p-6 text-center">
+              <Zap className="h-8 w-8 text-green-400 mx-auto mb-3" />
+              <div className="text-3xl font-bold gradient-text-profit mb-1">10X</div>
+              <div className="text-sm text-gray-400">Processing Speed</div>
+            </CardContent>
+          </Card>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+          <Card className="glass-strong border-2 border-emerald-500/30 bg-emerald-500/5">
+            <CardContent className="p-6 text-center">
+              <Sparkles className="h-8 w-8 text-emerald-400 mx-auto mb-3" />
+              <div className="text-3xl font-bold gradient-text-profit mb-1">GPT-4</div>
+              <div className="text-sm text-gray-400">AI Model</div>
+            </CardContent>
+          </Card>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+          <Card className="glass-strong border-2 border-green-500/30 bg-green-500/5">
+            <CardContent className="p-6 text-center">
+              <Target className="h-8 w-8 text-green-400 mx-auto mb-3" />
+              <div className="text-3xl font-bold gradient-text-profit mb-1">YES</div>
+              <div className="text-sm text-gray-400">Priority Access</div>
+            </CardContent>
+          </Card>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+          <Card className="glass-strong border-2 border-emerald-500/30 bg-emerald-500/5">
+            <CardContent className="p-6 text-center">
+              <BarChart3 className="h-8 w-8 text-emerald-400 mx-auto mb-3" />
+              <div className="text-3xl font-bold gradient-text-profit mb-1">ADVANCED</div>
+              <div className="text-sm text-gray-400">Analytics</div>
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
 
       {/* Advanced AI Models */}
