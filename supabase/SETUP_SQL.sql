@@ -116,6 +116,17 @@ create table if not exists public.usage_events (
   created_at timestamptz not null default now()
 );
 
+-- USER UPGRADES (for unlocking premium features)
+create table if not exists public.user_upgrades (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users (id) on delete cascade,
+  upgrade_type text not null, -- 'infinite', 'automation', '10x', 'dfy'
+  unlocked_at timestamptz not null default now()
+);
+
+create unique index if not exists user_upgrades_user_type_unique on public.user_upgrades (user_id, upgrade_type);
+create index if not exists user_upgrades_user_idx on public.user_upgrades (user_id);
+
 -- -----------------------
 -- RLS
 -- -----------------------
@@ -127,6 +138,7 @@ alter table public.bio_link_clicks enable row level security;
 alter table public.saved_targets enable row level security;
 alter table public.generated_comments enable row level security;
 alter table public.usage_events enable row level security;
+alter table public.user_upgrades enable row level security;
 
 -- PROFILES
 drop policy if exists "profiles_select_own" on public.profiles;
@@ -269,6 +281,17 @@ using (user_id = auth.uid());
 drop policy if exists "usage_events_insert_own" on public.usage_events;
 create policy "usage_events_insert_own"
 on public.usage_events for insert
+with check (user_id = auth.uid());
+
+-- USER UPGRADES
+drop policy if exists "user_upgrades_select_own" on public.user_upgrades;
+create policy "user_upgrades_select_own"
+on public.user_upgrades for select
+using (user_id = auth.uid());
+
+drop policy if exists "user_upgrades_insert_own" on public.user_upgrades;
+create policy "user_upgrades_insert_own"
+on public.user_upgrades for insert
 with check (user_id = auth.uid());
 
 
